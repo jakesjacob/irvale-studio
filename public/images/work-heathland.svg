@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1A1A1A"/>
+  <rect x="0" y="350" width="800" height="250" fill="#1E2A1E" opacity="0.6"/>
+  <ellipse cx="400" cy="380" rx="350" ry="80" fill="#243024" opacity="0.5"/>
+  <circle cx="650" cy="120" r="60" fill="#2A2A2A" opacity="0.3"/>
+  <rect x="350" y="280" width="3" height="100" fill="#C9A96E" opacity="0.15"/>
+  <circle cx="351" cy="275" r="8" fill="#C9A96E" opacity="0.1"/>
+  <text x="400" y="520" font-family="Georgia, serif" font-size="14" fill="#C9A96E" opacity="0.2" text-anchor="middle" letter-spacing="4">HEATHLAND GOLF CLUB</text>
+</svg>

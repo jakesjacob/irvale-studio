@@ -5,9 +5,16 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Eyebrow from '@/components/ui/Eyebrow';
 import RevealText from '@/components/ui/RevealText';
 import { projects } from '@/lib/data/projects';
+
+const projectImages = {
+  'heathland-golf-club': '/images/work-heathland.svg',
+  'aura-wellness-retreat': '/images/work-aura.svg',
+  'blackwood-performance': '/images/work-blackwood.svg',
+};
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,7 +78,17 @@ export default function FeaturedWork() {
               href={`/work/${project.slug}`}
               className="group relative flex-shrink-0 w-full md:w-[45vw] aspect-[4/3] bg-dark-2 overflow-hidden mb-4 md:mb-0"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-dark-2 to-dark" />
+              {/* Project image */}
+              {projectImages[project.slug] && (
+                <Image
+                  src={projectImages[project.slug]}
+                  alt={project.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(min-width: 768px) 45vw, 100vw"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-br from-dark-2/40 to-dark/60" />
 
               {/* Always-visible result metric */}
               <div className="absolute top-6 left-6 z-10">

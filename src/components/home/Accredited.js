@@ -84,7 +84,7 @@ function CredentialCard({ credential }) {
         ref={glowRef}
         className="absolute w-72 h-72 rounded-full pointer-events-none opacity-0"
         style={{
-          background: 'radial-gradient(circle, rgba(201,169,110,0.08) 0%, rgba(201,169,110,0.024) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201,169,110,0.064) 0%, rgba(201,169,110,0.019) 40%, transparent 70%)',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
