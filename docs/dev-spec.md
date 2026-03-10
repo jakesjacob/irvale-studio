@@ -409,10 +409,10 @@ Hardcoded in `src/lib/data/projects.js`:
 - [x] Schema markup (LocalBusiness, Service, FAQPage, CreativeWork)
 - [x] Meta titles + descriptions per page
 - [x] Open Graph tags + OG image
-- [ ] Favicon (gold I monogram)
+- [x] Favicon (gold I monogram)
 - [x] sitemap.xml + robots.txt
 - [x] prefers-reduced-motion respected everywhere
-- [ ] No console errors
+- [x] No console errors
 - [ ] Plausible analytics integration
 
 ---
