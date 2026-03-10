@@ -7,7 +7,7 @@ export default function Marquee({ items, separator = '·', className = '', speed
   return (
     <div className={cn('overflow-hidden whitespace-nowrap', className)}>
       <div
-        className="marquee-track gap-0"
+        className="marquee-track gap-0 items-center"
         style={{ '--marquee-speed': `${speed}s` }}
       >
         {repeated.map((item, i) => (
