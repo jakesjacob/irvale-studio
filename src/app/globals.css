@@ -172,6 +172,16 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
+/* Testimonial progress ring */
+@keyframes progress-ring {
+  from { stroke-dashoffset: 50.265; }
+  to { stroke-dashoffset: 0; }
+}
+
+.animate-progress-ring {
+  animation: progress-ring 6s linear;
+}
+
 /* Scrollbar hiding utility */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
