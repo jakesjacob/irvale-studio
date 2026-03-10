@@ -72,7 +72,7 @@ export default function Footer() {
       </div>
 
       <div
-        className="relative z-10 mx-auto px-[var(--gutter)] pt-24 md:pt-40 pb-24 md:pb-36"
+        className="relative z-10 mx-auto px-[var(--gutter)] pt-32 md:pt-48 pb-40 md:pb-56"
         style={{ maxWidth: 'var(--max-width)' }}
       >
         {/* Main footer grid */}
