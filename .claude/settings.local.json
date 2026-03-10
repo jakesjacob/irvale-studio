@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && npx create-next-app@latest . --js --eslint --no-tailwind --no-src-dir --app --no-turbopack --import-alias \"@/*\" --use-npm 2>&1)",
+      "Bash(cd \"C:/Users/jacob/Projects\" && npx create-next-app@latest merdiian-temp --js --eslint --no-tailwind --no-src-dir --app --no-turbopack --import-alias \"@/*\" --use-npm 2>&1)",
+      "Bash(cd \"C:/Users/jacob/Projects\" && echo \"N\" | npx create-next-app@latest merdiian-temp --js --eslint --no-tailwind --no-src-dir --app --no-turbopack --import-alias \"@/*\" --use-npm 2>&1)",
+      "Bash(cp -r \"C:/Users/jacob/Projects/merdiian-temp/\"* \"C:/Users/jacob/Projects/merdiian-studio/\" && cp \"C:/Users/jacob/Projects/merdiian-temp/\".gitignore \"C:/Users/jacob/Projects/merdiian-studio/\" && cp \"C:/Users/jacob/Projects/merdiian-temp/\".eslintrc.json \"C:/Users/jacob/Projects/merdiian-studio/\" 2>/dev/null; ls \"C:/Users/jacob/Projects/merdiian-studio/\")",
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && mkdir -p src && mv app src/ && mkdir -p src/components src/components/ui src/lib)",
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && npm install @tailwindcss/postcss tailwindcss clsx tailwind-merge framer-motion 2>&1)",
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && rm -f src/app/page.module.css public/next.svg public/vercel.svg public/file.svg public/globe.svg public/window.svg)",
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && npx next build 2>&1 | tail -20)",
+      "WebSearch",
+      "Bash(cd \"C:/Users/jacob/Projects\" && mv merdiian-studio meridian-studio 2>&1)",
+      "Bash(cd \"C:/Users/jacob/Projects/merdiian-studio\" && npm uninstall framer-motion && npm install gsap @gsap/react lenis splitting 2>&1)",
+      "Bash(claude mcp:*)",
+      "Bash(gh auth:*)",
+      "Bash(git init:*)"
+    ]
+  }
+}

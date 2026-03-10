@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* Backgrounds */
+  --color-dark: #111111;
+  --color-dark-2: #1A1A1A;
+  --color-cream: #F5F0E8;
+  --color-cream-2: #EDE8DF;
+  --color-navy: #0F1F3D;
+
+  /* Gold system */
+  --color-gold: #C9A96E;
+  --color-gold-light: #D9BC89;
+  --color-gold-muted: #A8895A;
+
+  /* Typography colours */
+  --color-text-dark: #1E1E1E;
+  --color-text-light: #F0EDE6;
+  --color-text-muted-dark: #6B6560;
+  --color-text-muted-light: #9A9590;
+
+  /* Functional */
+  --color-white: #FFFFFF;
+}
+
+/* Type scale */
+:root {
+  /* Display — hero headlines only */
+  --type-display: clamp(64px, 9vw, 140px);
+  --type-display-lh: 0.95;
+
+  /* H1 — section heroes, page titles */
+  --type-h1: clamp(48px, 6vw, 96px);
+  --type-h1-lh: 1.0;
+
+  /* H2 — section headlines */
+  --type-h2: clamp(36px, 4vw, 64px);
+  --type-h2-lh: 1.1;
+
+  /* H3 — card titles, service names */
+  --type-h3: clamp(24px, 2.5vw, 36px);
+  --type-h3-lh: 1.2;
+
+  /* Body large */
+  --type-body-lg: clamp(18px, 1.5vw, 22px);
+  --type-body-lg-lh: 1.65;
+
+  /* Body */
+  --type-body: clamp(16px, 1.2vw, 18px);
+  --type-body-lh: 1.7;
+
+  /* Label / eyebrow */
+  --type-label: 12px;
+  --type-label-ls: 0.18em;
+
+  /* Spacing */
+  --max-width: 1320px;
+  --gutter: clamp(24px, 5vw, 80px);
+  --section-gap: clamp(100px, 12vw, 180px);
+  --component-gap: clamp(48px, 6vw, 96px);
+  --grid-gap: clamp(16px, 2vw, 32px);
+
+  /* Borders */
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(0, 0, 0, 0.10);
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-body), 'Helvetica Neue', sans-serif;
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+}
+
+/* Heading defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), 'Garamond', Georgia, serif;
+}
+
+/* Smooth scrolling for reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
