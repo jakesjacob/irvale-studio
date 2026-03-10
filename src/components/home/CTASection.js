@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useCallback, useState } from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -17,20 +17,6 @@ export default function CTASection() {
   const btnRef = useRef(null);
   const noteRef = useRef(null);
   const glowRef = useRef(null);
-
-  // Magnetic button state
-  const [btnTransform, setBtnTransform] = useState({ x: 0, y: 0 });
-
-  const handleBtnMouseMove = useCallback((e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    setBtnTransform({ x: x * 0.15, y: y * 0.15 });
-  }, []);
-
-  const handleBtnMouseLeave = useCallback(() => {
-    setBtnTransform({ x: 0, y: 0 });
-  }, []);
 
   useGSAP(
     () => {
@@ -173,12 +159,6 @@ export default function CTASection() {
               href="/contact"
               ref={btnRef}
               className="relative inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-dark font-body text-sm font-medium tracking-[0.08em] uppercase px-10 py-4 transition-all duration-500 hover:tracking-[0.12em] group"
-              style={{
-                transform: `translate(${btnTransform.x}px, ${btnTransform.y}px)`,
-                transition: 'transform 0.3s cubic-bezier(0.33, 1, 0.68, 1), background-color 0.5s, letter-spacing 0.5s',
-              }}
-              onMouseMove={handleBtnMouseMove}
-              onMouseLeave={handleBtnMouseLeave}
             >
               <span>Begin Your Project</span>
               <svg
