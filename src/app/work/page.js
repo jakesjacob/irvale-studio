@@ -83,7 +83,7 @@ export default function WorkPage() {
                 <Link
                   key={project.slug}
                   href={`/work/${project.slug}`}
-                  data-cursor="portfolio"
+                 
                   className={cn(
                     'group relative col-span-1 aspect-[4/3] bg-dark-2 overflow-hidden',
                     colClass

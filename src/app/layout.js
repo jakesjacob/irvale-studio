@@ -1,7 +1,6 @@
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
 import TransitionLayout from "@/components/TransitionLayout";
@@ -43,7 +42,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
         <Preloader />
-        <CustomCursor />
         <SmoothScroll>
           <Navbar />
           <TransitionLayout>

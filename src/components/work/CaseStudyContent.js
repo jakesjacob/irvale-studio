@@ -177,7 +177,7 @@ export default function CaseStudyContent({ project, nextProject }) {
         >
           <Link
             href={`/work/${nextProject.slug}`}
-            data-cursor="portfolio"
+           
             className="group flex items-center justify-between"
           >
             <div>

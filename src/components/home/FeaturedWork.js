@@ -63,7 +63,7 @@ export default function FeaturedWork() {
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-              data-cursor="portfolio"
+             
               className="group relative flex-shrink-0 w-full md:w-[45vw] aspect-[4/3] bg-dark-2 overflow-hidden mb-4 md:mb-0"
             >
               {/* Placeholder — will be replaced with actual images */}
