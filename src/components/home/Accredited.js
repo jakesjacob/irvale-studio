@@ -48,6 +48,7 @@ function CredentialCard({ credential }) {
 
   const handleMouseMove = useCallback((e) => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
     const card = cardRef.current;
     if (!card || !glowRef.current) return;
 
@@ -105,12 +106,12 @@ function CredentialCard({ credential }) {
         {credential.title}
       </h3>
 
-      {/* Reveal line — draws on hover */}
-      <div className="h-px bg-gold/30 w-0 mt-4 mb-0 transition-all duration-500 ease-out group-hover:w-1/2 group-hover:mt-5 group-hover:mb-4" />
+      {/* Reveal line — always visible on mobile, draws on hover on desktop */}
+      <div className="h-px bg-gold/30 w-1/2 mt-5 mb-4 md:w-0 md:mt-4 md:mb-0 transition-all duration-500 ease-out md:group-hover:w-1/2 md:group-hover:mt-5 md:group-hover:mb-4" />
 
-      {/* Description — slides up and fades in on hover */}
-      <div className="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-out group-hover:max-h-32 group-hover:opacity-100">
-        <p className="font-body text-[length:var(--type-body-sm)] leading-[var(--type-body-sm-lh)] text-text-muted-light font-light translate-y-3 transition-transform duration-500 ease-out group-hover:translate-y-0">
+      {/* Description — always visible on mobile, hover reveal on desktop */}
+      <div className="overflow-hidden max-h-32 opacity-100 md:max-h-0 md:opacity-0 transition-all duration-500 ease-out md:group-hover:max-h-32 md:group-hover:opacity-100">
+        <p className="font-body text-[length:var(--type-body-sm)] leading-[var(--type-body-sm-lh)] text-text-muted-light font-light translate-y-0 md:translate-y-3 transition-transform duration-500 ease-out md:group-hover:translate-y-0">
           {credential.body}
         </p>
       </div>

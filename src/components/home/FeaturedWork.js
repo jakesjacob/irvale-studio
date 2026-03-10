@@ -97,19 +97,19 @@ export default function FeaturedWork() {
                 </span>
               </div>
 
-              {/* Hover overlay with details */}
-              <div className="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              {/* Details overlay — always visible on mobile, hover on desktop */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent md:bg-dark/70 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8">
                 <span className="font-body text-[length:var(--type-caption)] text-gold uppercase tracking-[var(--type-label-ls)] mb-2">
                   {project.niche}
                 </span>
                 <h3 className="font-display text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] text-text-light">
                   {project.name}
                 </h3>
-                <p className="font-body text-[length:var(--type-body-sm)] leading-[var(--type-body-sm-lh)] text-text-muted-light mt-2 max-w-sm">
+                <p className="hidden md:block font-body text-[length:var(--type-body-sm)] leading-[var(--type-body-sm-lh)] text-text-muted-light mt-2 max-w-sm">
                   {project.headline}
                 </p>
                 <span className="font-body text-[length:var(--type-body-sm)] text-gold mt-3">
-                  Read Case Study →
+                  View Project →
                 </span>
               </div>
             </Link>

@@ -72,7 +72,7 @@
   /* Spacing */
   --max-width: 1320px;
   --gutter: clamp(24px, 5vw, 80px);
-  --section-gap: clamp(100px, 12vw, 180px);
+  --section-gap: clamp(80px, 12vw, 180px);
   --component-gap: clamp(48px, 6vw, 96px);
   --grid-gap: clamp(16px, 2vw, 32px);
 
@@ -114,7 +114,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--type-button);
   letter-spacing: var(--type-button-ls);
   font-weight: 500;
-  padding: 14px 32px;
+  padding: 16px 32px;
+  min-height: 48px;
   background: var(--color-gold);
   color: var(--color-dark);
   overflow: hidden;
@@ -140,6 +141,10 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
 .btn-primary span,
 .btn-primary > * {
   position: relative;
@@ -153,7 +158,8 @@ h1, h2, h3, h4, h5, h6 {
   font-size: var(--type-button);
   letter-spacing: var(--type-button-ls);
   font-weight: 500;
-  padding: 14px 32px;
+  padding: 16px 32px;
+  min-height: 48px;
   border: 1px solid rgba(201, 169, 110, 0.4);
   color: var(--color-gold);
   overflow: hidden;
@@ -174,6 +180,10 @@ h1, h2, h3, h4, h5, h6 {
 .btn-outline:hover {
   color: var(--color-dark);
   transform: translateY(-2px);
+}
+
+.btn-outline:active {
+  transform: scale(0.97);
 }
 
 .btn-outline:hover::before {

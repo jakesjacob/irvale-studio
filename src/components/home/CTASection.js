@@ -158,7 +158,7 @@ export default function CTASection() {
             <Link
               href="/contact"
               ref={btnRef}
-              className="relative inline-flex items-center gap-3 bg-gold hover:bg-gold-light text-dark font-body text-[length:var(--type-button)] font-medium tracking-[var(--type-button-ls)] uppercase px-10 py-4 transition-all duration-500 hover:tracking-[0.12em] group"
+              className="relative inline-flex items-center justify-center gap-3 bg-gold hover:bg-gold-light active:scale-97 text-dark font-body text-[length:var(--type-button)] font-medium tracking-[var(--type-button-ls)] uppercase w-full sm:w-auto px-10 py-4 min-h-[48px] transition-all duration-500 hover:tracking-[0.12em] group"
             >
               <span>Begin Your Project</span>
               <svg

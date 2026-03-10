@@ -58,6 +58,7 @@ function ServiceCard({ service, index, cardRef, numberRef, iconRef, accentRef })
 
   const handleMouseMove = useCallback((e) => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
     const card = tiltRef.current;
     if (!card) return;
 

@@ -170,7 +170,7 @@ export default function Testimonial() {
               key={i}
               onClick={() => goTo(i)}
               aria-label={`Go to testimonial ${i + 1}`}
-              className="group relative p-2"
+              className="group relative p-3 min-w-[44px] min-h-[44px] flex items-center justify-center"
             >
               <span
                 className={`block w-2 h-2 rounded-full transition-all duration-500 ${

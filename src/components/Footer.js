@@ -142,7 +142,7 @@ export default function Footer() {
               className="mt-10 group flex items-center gap-3 cursor-pointer"
               aria-label="Back to top"
             >
-              <span className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-gold/40 group-hover:bg-gold/5">
+              <span className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center transition-all duration-500 group-hover:border-gold/40 group-hover:bg-gold/5">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

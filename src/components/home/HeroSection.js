@@ -118,10 +118,10 @@ export default function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center" style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.3))' }}>
-          <Link href="/contact" className="btn-primary">
+          <Link href="/contact" className="btn-primary w-full sm:w-auto text-center">
             <span>Start a Project →</span>
           </Link>
-          <Link href="/work" className="btn-outline border-white/30 text-text-light hover:text-dark">
+          <Link href="/work" className="btn-outline border-white/30 text-text-light hover:text-dark w-full sm:w-auto text-center">
             <span>See Client Results</span>
           </Link>
         </div>
