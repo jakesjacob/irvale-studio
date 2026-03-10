@@ -21,12 +21,6 @@ export default function HeroSection() {
 
     const imageWrapper = imageRef.current;
 
-    // Cinematic clip-path reveal: thin strip → full image
-    gsap.set(imageWrapper, {
-      clipPath: 'inset(100% 0% 0% 0%)',
-      scale: 1.15,
-    });
-
     const heroTl = gsap.timeline({ delay: 0.2 });
 
     heroTl.to(imageWrapper, {
@@ -76,7 +70,7 @@ export default function HeroSection() {
       className="relative h-screen flex items-center justify-center overflow-hidden bg-dark"
     >
       {/* Full-bleed background image */}
-      <div ref={imageRef} className="absolute inset-0 scale-110">
+      <div ref={imageRef} className="absolute inset-0" style={{ clipPath: 'inset(100% 0% 0% 0%)', transform: 'scale(1.15)' }}>
         <Image
           src="/images/hero-golf.jpg"
           alt="Luxury golf course landscape"
