@@ -8,6 +8,9 @@ const clients = [
   'Chiang Mai Go Tours',
 ];
 
+// Duplicate enough times to fill wide screens
+const items = [...clients, ...clients, ...clients, ...clients];
+
 export default function TrustLogos() {
   return (
     <section className="bg-cream py-16 overflow-hidden">
@@ -18,34 +21,19 @@ export default function TrustLogos() {
         <Eyebrow className="block text-center">Brands That Grew With Us</Eyebrow>
       </div>
 
-      {/* Scrolling logo carousel */}
       <div className="relative overflow-hidden">
         <div
-          className="marquee-track"
+          className="marquee-track gap-16 md:gap-24"
           style={{ '--marquee-speed': '20s' }}
         >
-          {/* First set */}
-          <div className="flex items-center gap-16 md:gap-24 shrink-0">
-            {clients.map((name, i) => (
-              <span
-                key={i}
-                className="font-display text-xl md:text-2xl text-text-dark/30 tracking-[0.15em] uppercase shrink-0 px-4"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-          {/* Duplicate set for seamless loop */}
-          <div className="flex items-center gap-16 md:gap-24 shrink-0">
-            {clients.map((name, i) => (
-              <span
-                key={`dup-${i}`}
-                className="font-display text-xl md:text-2xl text-text-dark/30 tracking-[0.15em] uppercase shrink-0 px-4"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
+          {items.map((name, i) => (
+            <span
+              key={i}
+              className="font-display text-xl md:text-2xl text-text-dark/30 tracking-[0.15em] uppercase shrink-0"
+            >
+              {name}
+            </span>
+          ))}
         </div>
       </div>
     </section>

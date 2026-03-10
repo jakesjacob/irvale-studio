@@ -20,9 +20,12 @@ const tools = [
   { name: 'WordPress', logo: '/logos/wordpress.svg' },
 ];
 
+// Duplicate for seamless loop
+const items = [...tools, ...tools];
+
 function LogoItem({ tool }) {
   return (
-    <div className="flex flex-col items-center gap-2 shrink-0 px-4">
+    <div className="flex flex-col items-center gap-2 shrink-0">
       <Image
         src={tool.logo}
         alt={tool.name}
@@ -47,24 +50,14 @@ export default function TechStack() {
         <Eyebrow className="block text-center">Powered By</Eyebrow>
       </div>
 
-      {/* Scrolling tech logos */}
       <div className="relative overflow-hidden">
         <div
-          className="marquee-track"
+          className="marquee-track gap-10 md:gap-14"
           style={{ '--marquee-speed': '30s' }}
         >
-          {/* First set */}
-          <div className="flex items-center gap-10 md:gap-14 shrink-0 pr-10 md:pr-14">
-            {tools.map((tool, i) => (
-              <LogoItem key={i} tool={tool} />
-            ))}
-          </div>
-          {/* Duplicate set for seamless loop */}
-          <div className="flex items-center gap-10 md:gap-14 shrink-0 pr-10 md:pr-14">
-            {tools.map((tool, i) => (
-              <LogoItem key={`dup-${i}`} tool={tool} />
-            ))}
-          </div>
+          {items.map((tool, i) => (
+            <LogoItem key={i} tool={tool} />
+          ))}
         </div>
       </div>
     </section>
