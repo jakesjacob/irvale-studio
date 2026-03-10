@@ -11,8 +11,8 @@ import Testimonial from '@/components/home/Testimonial';
 import CTASection from '@/components/home/CTASection';
 
 const marqueeItems = [
-  '+340% ENQUIRIES', '+180% DIRECT BOOKINGS', 'SOLD OUT IN 72HRS',
-  '+210% CLASS BOOKINGS', '400+ WAITLIST', '#1 LOCAL RANKINGS',
+  'Bespoke', 'Considered', 'Refined', 'Strategic',
+  'Intentional', 'Elevated', 'Precision', 'Crafted',
 ];
 
 export default function Home() {
@@ -21,20 +21,21 @@ export default function Home() {
       {/* Hero — full-bleed golf course image, centered text */}
       <HeroSection />
 
-      {/* Results marquee */}
-      <div className="bg-dark-2 py-4 border-y border-[var(--border-dark)]">
+      {/* Premium positioning marquee */}
+      <div className="bg-dark-2 py-5 border-y border-[var(--border-dark)]">
         <Marquee
           items={marqueeItems}
-          className="font-body text-sm font-medium text-gold/60 tracking-[0.15em] uppercase"
-          speed={25}
+          separator="—"
+          className="font-display italic text-[length:var(--type-body)] text-text-light/20 tracking-[0.12em]"
+          speed={60}
         />
       </div>
 
-      {/* Scrolling client logos */}
-      <TrustLogos />
-
       {/* Problem statement + client outcome stats */}
       <IntroStatement />
+
+      {/* Scrolling client logos */}
+      <TrustLogos />
 
       {/* Client results — horizontal scroll */}
       <FeaturedWork />
