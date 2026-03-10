@@ -209,121 +209,136 @@ export default function ServicesOverview() {
     () => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      const mm = gsap.matchMedia();
+      // Small delay to ensure child refs are fully populated
+      const initTimer = requestAnimationFrame(() => {
+        const mm = gsap.matchMedia();
 
-      mm.add('(min-width: 768px)', () => {
-        // Animate the connecting line across top of cards
-        if (lineRef.current) {
-          gsap.from(lineRef.current, {
-            scaleX: 0,
-            transformOrigin: 'left center',
-            duration: 1.5,
-            ease: 'power3.inOut',
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 60%',
-              once: true,
-            },
-          });
-        }
-
-        // Staggered card reveal with GSAP timelines
-        cardsRef.current.forEach((card, i) => {
-          if (!card) return;
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 80%',
-              once: true,
-            },
-          });
-
-          // Card slides up and fades in
-          tl.from(card, {
-            y: 60,
-            autoAlpha: 0,
-            duration: 0.9,
-            ease: 'power3.out',
-            delay: i * 0.2,
-          });
-
-          // Number slides up from below
-          if (numbersRef.current[i]) {
-            tl.from(
-              numbersRef.current[i],
+        mm.add('(min-width: 768px)', () => {
+          // Animate the connecting line across top of cards
+          if (lineRef.current) {
+            gsap.fromTo(lineRef.current,
+              { scaleX: 0 },
               {
-                yPercent: 100,
-                autoAlpha: 0,
-                duration: 0.7,
-                ease: 'power3.out',
-              },
-              '-=0.6'
-            );
-          }
-
-          // Icon fades and scales in
-          if (iconsRef.current[i]) {
-            tl.from(
-              iconsRef.current[i],
-              {
-                scale: 0,
-                autoAlpha: 0,
-                duration: 0.5,
-                ease: 'back.out(1.7)',
-              },
-              '-=0.5'
-            );
-          }
-
-          // Gold accent line draws across
-          if (accentsRef.current[i]) {
-            tl.from(
-              accentsRef.current[i],
-              {
-                scaleX: 0,
+                scaleX: 1,
                 transformOrigin: 'left center',
-                duration: 0.8,
-                ease: 'power2.inOut',
-              },
-              '-=0.4'
+                duration: 1.5,
+                ease: 'power3.inOut',
+                scrollTrigger: {
+                  trigger: sectionRef.current,
+                  start: 'top 60%',
+                  once: true,
+                },
+              }
             );
           }
 
-          // Outcome text fades in last
-          if (outcomesRef.current[i]) {
-            tl.from(
-              outcomesRef.current[i],
-              {
-                y: 20,
-                autoAlpha: 0,
-                duration: 0.6,
-                ease: 'power2.out',
+          // Staggered card reveal with GSAP timelines
+          cardsRef.current.forEach((card, i) => {
+            if (!card) return;
+
+            // Set initial state explicitly
+            gsap.set(card, { y: 60, opacity: 0 });
+
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top 65%',
+                once: true,
               },
-              '-=0.3'
-            );
-          }
+            });
+
+            // Card slides up and fades in
+            tl.to(card, {
+              y: 0,
+              opacity: 1,
+              duration: 0.9,
+              ease: 'power3.out',
+              delay: i * 0.2,
+            });
+
+            // Number slides up from below
+            if (numbersRef.current[i]) {
+              gsap.set(numbersRef.current[i], { yPercent: 100, opacity: 0 });
+              tl.to(
+                numbersRef.current[i],
+                {
+                  yPercent: 0,
+                  opacity: 1,
+                  duration: 0.7,
+                  ease: 'power3.out',
+                },
+                '-=0.6'
+              );
+            }
+
+            // Icon fades and scales in
+            if (iconsRef.current[i]) {
+              gsap.set(iconsRef.current[i], { scale: 0, opacity: 0 });
+              tl.to(
+                iconsRef.current[i],
+                {
+                  scale: 1,
+                  opacity: 1,
+                  duration: 0.5,
+                  ease: 'back.out(1.7)',
+                },
+                '-=0.5'
+              );
+            }
+
+            // Gold accent line draws across
+            if (accentsRef.current[i]) {
+              gsap.set(accentsRef.current[i], { scaleX: 0, transformOrigin: 'left center' });
+              tl.to(
+                accentsRef.current[i],
+                {
+                  scaleX: 1,
+                  duration: 0.8,
+                  ease: 'power2.inOut',
+                },
+                '-=0.4'
+              );
+            }
+
+            // Outcome text fades in last
+            if (outcomesRef.current[i]) {
+              gsap.set(outcomesRef.current[i], { y: 20, opacity: 0 });
+              tl.to(
+                outcomesRef.current[i],
+                {
+                  y: 0,
+                  opacity: 1,
+                  duration: 0.6,
+                  ease: 'power2.out',
+                },
+                '-=0.3'
+              );
+            }
+          });
         });
-      });
 
-      // Mobile: simpler staggered fade-in
-      mm.add('(max-width: 767px)', () => {
-        cardsRef.current.forEach((card, i) => {
-          if (!card) return;
-          gsap.from(card, {
-            y: 40,
-            autoAlpha: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            delay: i * 0.1,
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              once: true,
-            },
+        // Mobile: simpler staggered fade-in
+        mm.add('(max-width: 767px)', () => {
+          cardsRef.current.forEach((card, i) => {
+            if (!card) return;
+            gsap.set(card, { y: 40, opacity: 0 });
+            gsap.to(card, {
+              y: 0,
+              opacity: 1,
+              duration: 0.8,
+              ease: 'power2.out',
+              delay: i * 0.1,
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                once: true,
+              },
+            });
           });
         });
       });
+
+      return () => cancelAnimationFrame(initTimer);
     },
     { scope: sectionRef }
   );
