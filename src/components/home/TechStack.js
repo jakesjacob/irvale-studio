@@ -20,11 +20,28 @@ const tools = [
   { name: 'WordPress', logo: '/logos/wordpress.svg' },
 ];
 
+function LogoItem({ tool }) {
+  return (
+    <div className="flex flex-col items-center gap-2 shrink-0 px-4">
+      <Image
+        src={tool.logo}
+        alt={tool.name}
+        width={40}
+        height={40}
+        className="h-8 md:h-10 w-8 md:w-10 object-contain opacity-20"
+      />
+      <span className="font-body text-[10px] md:text-xs text-text-dark/20 tracking-[0.15em] uppercase">
+        {tool.name}
+      </span>
+    </div>
+  );
+}
+
 export default function TechStack() {
   return (
     <section className="bg-cream-2 py-16 overflow-hidden">
       <div
-        className="mx-auto px-[var(--gutter)] mb-8"
+        className="mx-auto px-[var(--gutter)] mb-10"
         style={{ maxWidth: 'var(--max-width)' }}
       >
         <Eyebrow className="block text-center">Powered By</Eyebrow>
@@ -34,32 +51,18 @@ export default function TechStack() {
       <div className="relative overflow-hidden">
         <div
           className="marquee-track"
-          style={{ '--marquee-speed': '25s' }}
+          style={{ '--marquee-speed': '30s' }}
         >
           {/* First set */}
-          <div className="flex items-center gap-12 md:gap-16 shrink-0">
+          <div className="flex items-center gap-10 md:gap-14 shrink-0 pr-10 md:pr-14">
             {tools.map((tool, i) => (
-              <Image
-                key={i}
-                src={tool.logo}
-                alt={tool.name}
-                width={120}
-                height={40}
-                className="h-8 md:h-10 w-auto shrink-0 opacity-25 grayscale px-2"
-              />
+              <LogoItem key={i} tool={tool} />
             ))}
           </div>
           {/* Duplicate set for seamless loop */}
-          <div className="flex items-center gap-12 md:gap-16 shrink-0">
+          <div className="flex items-center gap-10 md:gap-14 shrink-0 pr-10 md:pr-14">
             {tools.map((tool, i) => (
-              <Image
-                key={`dup-${i}`}
-                src={tool.logo}
-                alt={tool.name}
-                width={120}
-                height={40}
-                className="h-8 md:h-10 w-auto shrink-0 opacity-25 grayscale px-2"
-              />
+              <LogoItem key={`dup-${i}`} tool={tool} />
             ))}
           </div>
         </div>
