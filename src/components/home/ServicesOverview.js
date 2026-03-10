@@ -70,9 +70,9 @@ function ServiceCard({ service, index, cardRef, numberRef, iconRef, accentRef, o
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    // Keep rotation subtle — max 6deg for luxury restraint
-    const rotateX = ((y - centerY) / centerY) * -6;
-    const rotateY = ((x - centerX) / centerX) * 6;
+    // Keep rotation very subtle — max 3deg
+    const rotateX = ((y - centerY) / centerY) * -3;
+    const rotateY = ((x - centerX) / centerX) * 3;
 
     gsap.to(card, {
       rotateX,
@@ -121,20 +121,15 @@ function ServiceCard({ service, index, cardRef, numberRef, iconRef, accentRef, o
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="service-card group relative border border-[var(--border-light)] bg-cream p-8 md:p-10 will-change-transform transition-[border-color,box-shadow] duration-500 ease-out hover:border-gold/30 hover:shadow-[0_8px_40px_rgba(201,169,110,0.12)] active:scale-[0.98]"
+      className="service-card group relative border border-[var(--border-light)] bg-cream p-8 md:p-10 overflow-hidden will-change-transform transition-[border-color,box-shadow] duration-500 ease-out hover:border-gold/20 hover:shadow-[0_4px_24px_rgba(201,169,110,0.06)] active:scale-[0.98]"
       style={{ transformStyle: 'preserve-3d' }}
     >
-      {/* Animated gradient border glow — visible on hover */}
-      <div className="absolute -inset-px rounded-[1px] opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 service-border-glow" />
-      </div>
-
-      {/* Cursor glow follow */}
+      {/* Subtle radial glow that follows cursor */}
       <div
         ref={glowRef}
-        className="absolute w-64 h-64 rounded-full pointer-events-none opacity-0"
+        className="absolute w-80 h-80 rounded-full pointer-events-none opacity-0"
         style={{
-          background: 'radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201,169,110,0.04) 0%, transparent 60%)',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',

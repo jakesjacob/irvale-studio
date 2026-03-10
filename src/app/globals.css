@@ -172,35 +172,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
-/* Animated gradient border for service cards */
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.service-border-glow {
-  background: conic-gradient(
-    from var(--border-angle),
-    transparent 0%,
-    rgba(201, 169, 110, 0.4) 10%,
-    rgba(201, 169, 110, 0.1) 30%,
-    transparent 50%,
-    rgba(201, 169, 110, 0.1) 70%,
-    rgba(201, 169, 110, 0.4) 90%,
-    transparent 100%
-  );
-  animation: border-spin 4s linear infinite;
-}
-
-@keyframes border-spin {
-  to { --border-angle: 360deg; }
-}
-
-.service-card {
-  background-clip: padding-box;
-}
-
 /* Scrollbar hiding utility */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
