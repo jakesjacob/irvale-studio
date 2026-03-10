@@ -1,4 +1,4 @@
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Raleway } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
@@ -15,7 +15,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const raleway = Raleway({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
@@ -45,7 +45,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" translate="no">
-      <body className={`${cormorant.variable} ${dmSans.variable} antialiased notranslate`}>
+      <body className={`${cormorant.variable} ${raleway.variable} antialiased notranslate`}>
         <Preloader />
         <SmoothScroll>
           <Navbar />

@@ -321,7 +321,7 @@ export default function ServicesOverview() {
           as="h2"
           className="font-display font-normal text-text-dark text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[700px] mb-16"
         >
-          Design, search, and AI — working together to grow your business
+          Design, search, and AI — working together to grow your business.
         </RevealText>
 
         {/* Connecting line — desktop only */}

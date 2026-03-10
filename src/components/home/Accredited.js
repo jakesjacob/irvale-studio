@@ -162,7 +162,7 @@ export default function Accredited() {
           as="h2"
           className="font-display font-normal text-text-light text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[600px] mb-14"
         >
-          Expertise you can trust
+          Expertise you can trust.
         </RevealText>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">

@@ -53,7 +53,7 @@ export default function TechStack() {
       <div className="relative overflow-hidden">
         <div
           className="marquee-track gap-10 md:gap-14"
-          style={{ '--marquee-speed': '30s' }}
+          style={{ '--marquee-speed': '60s' }}
         >
           {items.map((tool, i) => (
             <LogoItem key={i} tool={tool} />

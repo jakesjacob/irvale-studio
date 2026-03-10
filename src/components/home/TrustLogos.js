@@ -3,7 +3,7 @@
 import Eyebrow from '@/components/ui/Eyebrow';
 
 const clients = [
-  'BOXX',
+  'Boxx Fitness Studio',
   'Hang Dong Golf Club',
   'Chiang Mai Go Tours',
 ];
@@ -24,7 +24,7 @@ export default function TrustLogos() {
       <div className="relative overflow-hidden">
         <div
           className="marquee-track gap-16 md:gap-24"
-          style={{ '--marquee-speed': '45s' }}
+          style={{ '--marquee-speed': '70s' }}
         >
           {items.map((name, i) => (
             <span

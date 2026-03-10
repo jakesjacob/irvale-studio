@@ -112,7 +112,7 @@ export default function Process() {
 
             <h2 className="font-display text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] text-text-light mb-6">
               Four steps.
-              <br className="hidden md:block" /> Ninety days to results.
+              <br className="hidden md:block" /> Guaranteed results.
             </h2>
 
             <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-light mb-8 max-w-md">

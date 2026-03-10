@@ -24,7 +24,7 @@ export default function IntroStatement() {
           as="h2"
           className="font-display font-normal text-text-light text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[800px] mb-12"
         >
-          Your digital presence should be as refined as the experience you offer
+          Your digital presence should be as refined as the experience you offer.
         </RevealText>
 
         <SectionReveal className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
