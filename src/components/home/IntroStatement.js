@@ -18,7 +18,7 @@ export default function IntroStatement() {
         className="mx-auto px-[var(--gutter)]"
         style={{ maxWidth: 'var(--max-width)' }}
       >
-        <Eyebrow className="mb-8 block">Who We Are</Eyebrow>
+        <Eyebrow className="mb-8 block">What We Do For You</Eyebrow>
 
         <RevealText
           as="h2"
@@ -29,7 +29,7 @@ export default function IntroStatement() {
 
         <SectionReveal className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <p className="font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-muted-light font-light">
-            We design and build bespoke websites for hospitality, wellness, and private membership brands — paired with SEO and AI visibility that turns your digital presence into a growth channel.
+            We design and build bespoke websites for hospitality, wellness, and private membership brands — paired with SEO, AI visibility, and digital marketing that turns your digital presence into a growth channel.
           </p>
           <p className="font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-muted-light font-light">
             No templates. No generic agencies. Every project is built around your brand, your audience, and the metrics that actually matter to your business.
