@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function RevealText({ children, as: Tag = 'p', className = '', delay = 0 }) {
+export default function RevealText({ children, as: Tag = 'p', className = '', delay = 0, style }) {
   const containerRef = useRef(null);
 
   const words = typeof children === 'string' ? children.split(' ') : [children];
@@ -34,7 +34,7 @@ export default function RevealText({ children, as: Tag = 'p', className = '', de
   }, { scope: containerRef });
 
   return (
-    <Tag ref={containerRef} className={cn('flex flex-wrap', className)}>
+    <Tag ref={containerRef} className={cn('flex flex-wrap', className)} style={style}>
       {words.map((word, i) => (
         <span key={i} className="inline-block overflow-hidden mr-[0.3em] pb-[0.15em]">
           <span className="word-inner inline-block">{word}</span>
