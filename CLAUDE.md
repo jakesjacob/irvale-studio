@@ -1,4 +1,4 @@
-# Meridian Studio
+# Irvale Studio
 
 ## Tech Stack
 - Next.js 16 + React 19 (JavaScript, no TypeScript)

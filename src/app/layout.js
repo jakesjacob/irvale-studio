@@ -17,7 +17,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
-  title: "Meridian Studio",
+  title: "Irvale Studio",
   description: "Where luxury brands meet their digital moment.",
 };
 

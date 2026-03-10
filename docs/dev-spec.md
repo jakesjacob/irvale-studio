@@ -1,4 +1,4 @@
-# MERIDIAN STUDIO — DEV SPEC (Source of Truth)
+# IRVALE STUDIO — DEV SPEC (Source of Truth)
 
 > Adapted from the v3 brand brief for Next.js + Tailwind implementation.
 > This is the single source of truth for building the site.
@@ -7,9 +7,9 @@
 
 ## 1. BRAND
 
-- **Name:** Meridian Studio
+- **Name:** Irvale Studio
 - **Tagline:** *Where luxury brands meet their digital moment.*
-- **Logo:** Wordmark only — `MERIDIAN STUDIO` in Cormorant Garamond Regular, `letter-spacing: 0.25em`. Optional thin gold 1px rule beneath (60% width of text).
+- **Logo:** Wordmark only — `IRVALE STUDIO` in Cormorant Garamond Regular, `letter-spacing: 0.25em`. Optional thin gold 1px rule beneath (60% width of text).
 
 ---
 
@@ -112,8 +112,8 @@ All animation via GSAP. Use `useGSAP` hook from `@gsap/react` in every animated 
 - Duration: 1.4, easing: exponential decay
 
 ### 6.2 — Preloader (Curtain Reveal)
-- Full-screen dark overlay → `MERIDIAN` wordmark fades in (gold, Cormorant) → fades out → two vertical panels slide outward like theatre curtains
-- Total: ~1.4s. Only on first visit (sessionStorage flag `meridian_visited`)
+- Full-screen dark overlay → `IRVALE` wordmark fades in (gold, Cormorant) → fades out → two vertical panels slide outward like theatre curtains
+- Total: ~1.4s. Only on first visit (sessionStorage flag `irvale_visited`)
 - Build as `<Preloader>` client component
 
 ### 6.3 — Page Transitions
