@@ -58,7 +58,7 @@ export default function FeaturedWork() {
           className="mx-auto px-[var(--gutter)] mb-12"
           style={{ maxWidth: 'var(--max-width)' }}
         >
-          <Eyebrow className="mb-4 block">Selected Work</Eyebrow>
+          <Eyebrow className="mb-4 block">Trusted Clients</Eyebrow>
           <RevealText
             as="h2"
             className="font-display font-normal text-text-light text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] max-w-[600px]"
