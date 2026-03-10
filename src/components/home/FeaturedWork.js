@@ -63,7 +63,7 @@ export default function FeaturedWork() {
             as="h2"
             className="font-display font-normal text-text-light text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] max-w-[600px]"
           >
-            Real results for real businesses.
+            Valuable results and growth.
           </RevealText>
         </div>
 
