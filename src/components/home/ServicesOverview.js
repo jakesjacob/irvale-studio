@@ -121,7 +121,7 @@ function ServiceCard({ service, index, cardRef, numberRef, iconRef, accentRef, o
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="service-card group relative border border-[var(--border-light)] bg-cream p-8 md:p-10 overflow-hidden will-change-transform transition-[border-color,box-shadow] duration-500 ease-out hover:border-gold/20 hover:shadow-[0_4px_24px_rgba(201,169,110,0.06)] active:scale-[0.98]"
+      className="service-card group relative border border-[var(--border-light)] bg-cream p-8 md:p-10 overflow-hidden will-change-transform transition-[border-color,box-shadow] duration-500 ease-out hover:border-gold/25 hover:shadow-[0_6px_30px_rgba(201,169,110,0.1)] active:scale-[0.98]"
       style={{ transformStyle: 'preserve-3d' }}
     >
       {/* Subtle radial glow that follows cursor */}
@@ -129,7 +129,7 @@ function ServiceCard({ service, index, cardRef, numberRef, iconRef, accentRef, o
         ref={glowRef}
         className="absolute w-80 h-80 rounded-full pointer-events-none opacity-0"
         style={{
-          background: 'radial-gradient(circle, rgba(201,169,110,0.04) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(201,169,110,0.12) 0%, rgba(201,169,110,0.04) 40%, transparent 70%)',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
