@@ -11,33 +11,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 const credentials = [
   {
-    title: 'Certified Web Design',
-    body: 'Google UX Design Professional Certificate — designing intuitive, conversion-focused experiences for luxury brands.',
+    title: 'Certified UX Design',
+    body: 'Google UX Professional Certificate. Intuitive, conversion-focused experiences for premium brands.',
     number: '01',
   },
   {
-    title: 'SEO Specialist',
-    body: 'Advanced search engine optimisation & analytics. Technical SEO, content strategy, and local ranking dominance.',
+    title: 'Search Specialist',
+    body: 'Technical SEO, content strategy, and local ranking dominance. First page or we keep working.',
     number: '02',
   },
   {
-    title: 'AI Search Pioneer',
-    body: 'Early adopter of AI visibility strategies — ensuring your brand appears when ChatGPT, Gemini, and Perplexity recommend.',
+    title: 'AI Visibility Pioneer',
+    body: 'Your brand recommended by ChatGPT, Gemini, and Perplexity. Not future-proofing — present-proofing.',
     number: '03',
   },
   {
-    title: 'Full-Stack Development',
-    body: 'React, Next.js & modern JavaScript architecture. Bespoke builds, not templates — performance-first engineering.',
+    title: 'Full-Stack Engineering',
+    body: 'React, Next.js, and modern architecture. Every build is bespoke, performance-first.',
     number: '04',
   },
   {
-    title: 'Conversion Optimisation',
-    body: 'Data-driven UX design focused on revenue outcomes. Every element tested, every flow optimised for action.',
+    title: 'Conversion Design',
+    body: 'Every element earns its place. Layouts, flows, and interactions engineered for revenue.',
     number: '05',
   },
   {
-    title: 'Digital Strategy',
-    body: 'Integrated brand, content & performance marketing. The full picture, not just isolated tactics.',
+    title: 'Growth Strategy',
+    body: 'Brand, content, and performance marketing working as one system — not isolated tactics.',
     number: '06',
   },
 ];

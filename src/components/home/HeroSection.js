@@ -103,16 +103,16 @@ export default function HeroSection() {
           as="h1"
           className="font-display italic font-normal text-text-light text-[length:var(--type-display)] leading-[var(--type-display-lh)] max-w-[900px] mx-auto justify-center"
         >
-          More enquiries. More bookings. More revenue.
+          Where premium brands meet their digital moment.
         </RevealText>
 
         <p className="mt-6 font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-light/80 font-light max-w-lg mx-auto">
-          We build websites that turn premium brands into growth engines — through design, SEO, and AI visibility.
+          Bespoke websites, search dominance, and AI visibility for hospitality, wellness, and private membership brands.
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/contact" className="btn-primary">
-            <span>Grow Your Brand →</span>
+            <span>Start a Project →</span>
           </Link>
           <Link href="/work" className="btn-outline border-white/30 text-text-light hover:text-dark">
             <span>See Client Results</span>

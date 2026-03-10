@@ -132,7 +132,7 @@ export default function Testimonial() {
           </span>
         </div>
 
-        <Eyebrow className="mb-16 block text-center">What Our Clients Say</Eyebrow>
+        <Eyebrow className="mb-16 block text-center">Client Testimonials</Eyebrow>
 
         {/* Testimonial content — centered, single at a time */}
         <div className="max-w-3xl mx-auto text-center relative min-h-[280px] md:min-h-[240px] flex flex-col items-center justify-center">

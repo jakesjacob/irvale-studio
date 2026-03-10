@@ -58,12 +58,12 @@ export default function FeaturedWork() {
           className="mx-auto px-[var(--gutter)] mb-12"
           style={{ maxWidth: 'var(--max-width)' }}
         >
-          <Eyebrow className="mb-4 block">Client Results</Eyebrow>
+          <Eyebrow className="mb-4 block">Selected Work</Eyebrow>
           <RevealText
             as="h2"
             className="font-display font-normal text-text-light text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] max-w-[600px]"
           >
-            Real businesses. Measurable growth. Here&rsquo;s the proof.
+            Real results for real businesses.
           </RevealText>
         </div>
 
@@ -124,7 +124,7 @@ export default function FeaturedWork() {
             href="/work"
             className="font-body text-sm font-medium text-gold hover:text-gold-light transition-colors"
           >
-            See All Client Results →
+            See All Work →
           </Link>
         </div>
       </div>

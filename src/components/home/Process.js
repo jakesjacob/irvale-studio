@@ -11,27 +11,27 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     number: '01',
-    title: 'We Learn Your Business',
+    title: 'Discovery',
     description:
-      "Your goals, your customers, your competitors. We go deep so the strategy is built on reality — not guesswork.",
+      'Your goals, your customers, your competitors. Strategy built on reality, not guesswork.',
   },
   {
     number: '02',
-    title: 'We Map the Growth Plan',
+    title: 'Strategy & Roadmap',
     description:
-      "A clear roadmap covering what we'll build, how it'll convert, and where the traffic will come from. You'll know the ROI before we write a line of code.",
+      'A clear plan covering what we build, how it converts, and where the traffic comes from.',
   },
   {
     number: '03',
-    title: 'We Build & Launch',
+    title: 'Build & Launch',
     description:
-      'Bespoke design and development with weekly progress updates. You see everything as it comes together — no surprises.',
+      'Bespoke design and development with weekly updates. No surprises.',
   },
   {
     number: '04',
-    title: 'You Grow',
+    title: 'Growth',
     description:
-      'Your site goes live and starts working. We monitor performance, optimise for conversions, and make sure the growth keeps compounding.',
+      'Your site goes live and starts working. We optimise, refine, and compound the results.',
   },
 ];
 
@@ -111,12 +111,12 @@ export default function Process() {
             <Eyebrow className="mb-6 block">From Brief to Growth</Eyebrow>
 
             <h2 className="font-display text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] text-text-light mb-6">
-              A process built
-              <br className="hidden md:block" /> for results
+              Four steps.
+              <br className="hidden md:block" /> Ninety days to results.
             </h2>
 
             <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-light mb-8 max-w-md">
-              Most clients see measurable results within 90 days of launch.
+              A proven process refined across every project we deliver.
             </p>
 
             {/* Progress indicator — desktop only */}

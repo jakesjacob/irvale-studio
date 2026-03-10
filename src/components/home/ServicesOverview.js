@@ -16,8 +16,8 @@ const services = [
     title: 'Get Found',
     subtitle: 'Design & Development',
     description:
-      'A website that looks premium and converts. Faster load times, intuitive booking flows, and a design that builds trust the moment someone lands. No templates — built for your brand, your audience, your goals.',
-    outcome: 'Clients see 2–3x more enquiries within the first quarter.',
+      'A bespoke website that builds trust on first impression and converts visitors into enquiries through considered design and intuitive booking flows.',
+    outcome: '2–3x more enquiries within the first quarter.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8">
         <circle cx="11" cy="11" r="8" />
@@ -30,8 +30,8 @@ const services = [
     title: 'Get Chosen',
     subtitle: 'SEO & Search Strategy',
     description:
-      'Rank for the searches your ideal customers are making. We build the technical foundation and content strategy that puts you ahead of competitors in Google — and keeps you there.',
-    outcome: 'Average #1 local ranking within 6 months.',
+      'Technical SEO and content strategy that puts you ahead of competitors in Google for the searches your ideal customers are making.',
+    outcome: '#1 local ranking within 6 months.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8">
         <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" strokeLinecap="round" strokeLinejoin="round" />
@@ -43,8 +43,8 @@ const services = [
     title: 'Get Recommended',
     subtitle: 'AI Visibility',
     description:
-      "When someone asks ChatGPT for \"the best spa near me\" or \"top golf clubs in London\" — your name comes up. We optimise your brand for the AI-powered search that's replacing Google for millions.",
-    outcome: 'Crestview Members Club built a 400+ waitlist in 3 months.',
+      'When someone asks ChatGPT for the best spa or top golf clubs near them, your name comes up. We optimise your brand for AI-powered search.',
+    outcome: '400+ waitlist in 3 months for Crestview Members Club.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-8 h-8">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
@@ -344,12 +344,12 @@ export default function ServicesOverview() {
         className="mx-auto px-[var(--gutter)]"
         style={{ maxWidth: 'var(--max-width)' }}
       >
-        <Eyebrow className="mb-4 block">How We Grow Your Business</Eyebrow>
+        <Eyebrow className="mb-4 block">What We Do</Eyebrow>
         <RevealText
           as="h2"
           className="font-display font-normal text-text-dark text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[700px] mb-16"
         >
-          Three ways we put more customers through your door
+          Design, search, and AI — working together to grow your business
         </RevealText>
 
         {/* Connecting line — desktop only */}
@@ -380,7 +380,7 @@ export default function ServicesOverview() {
             href="/services"
             className="btn-outline inline-block"
           >
-            <span>See Pricing & Packages</span>
+            <span>Explore Services</span>
           </Link>
         </div>
       </div>

@@ -6,9 +6,9 @@ import Eyebrow from '@/components/ui/Eyebrow';
 import Counter from '@/components/ui/Counter';
 
 const stats = [
-  { value: 340, suffix: '%', label: 'Average increase in enquiries' },
+  { value: 340, suffix: '%', label: 'Increase in enquiries' },
   { value: 180, suffix: '%', label: 'More direct bookings' },
-  { value: 72, suffix: 'hrs', label: 'Fastest sell-out after launch' },
+  { value: 72, suffix: 'hrs', label: 'Sell-out after launch' },
 ];
 
 export default function IntroStatement() {
@@ -18,21 +18,21 @@ export default function IntroStatement() {
         className="mx-auto px-[var(--gutter)]"
         style={{ maxWidth: 'var(--max-width)' }}
       >
-        <Eyebrow className="mb-8 block">The Problem</Eyebrow>
+        <Eyebrow className="mb-8 block">Who We Are</Eyebrow>
 
         <RevealText
           as="h2"
           className="font-display font-normal text-text-light text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[800px] mb-12"
         >
-          Your brand deserves better than a template website that loses you money
+          Your digital presence should be as refined as the experience you offer
         </RevealText>
 
         <SectionReveal className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <p className="font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-muted-light font-light">
-            Premium brands lose thousands every month to poorly built websites — high bounce rates, low conversions, and invisible search presence. Your competitors are taking the bookings that should be yours.
+            We design and build bespoke websites for hospitality, wellness, and private membership brands — paired with SEO and AI visibility that turns your digital presence into a growth channel.
           </p>
           <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-light font-light">
-            We fix that. Bespoke design, technical SEO, and AI visibility — built specifically for hospitality, wellness, and private membership brands. The result? More people find you, more people trust you, and more people book.
+            No templates. No generic agencies. Every project is built around your brand, your audience, and the metrics that actually matter to your business.
           </p>
         </SectionReveal>
 
