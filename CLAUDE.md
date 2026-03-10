@@ -39,8 +39,16 @@ src/
 - **context7** — Use this to fetch up-to-date documentation for any library (GSAP, Next.js, Tailwind, Lenis, etc.) before implementing. Always resolve the library ID first, then fetch relevant docs.
 - **Figma** — Use for implementing designs from Figma files when URLs are provided.
 
-## UI Inspiration
-- When building premium UI components or interactions, search CodePen (https://codepen.io) for creative examples and animation inspiration. Particularly useful for: scroll animations, text reveals, custom cursors, magnetic buttons, parallax effects, and other luxury micro-interactions.
+## UI & Design Inspiration
+Use these reference sites for creative direction, layout patterns, and messaging strategy:
+
+- **https://kijo.london** — Customer-outcome messaging, problem-first framing, clean typography, interactive text animations. Study how they lead with client problems before presenting solutions.
+- **https://www.matterofform.com/** — Premium luxury agency aesthetic, editorial layouts, sophisticated scroll animations, dark/light contrast sections. Reference for high-end visual tone and brand positioning.
+- **https://www.appnova.com/** — Bold hero sections, results-driven case studies, strong CTAs, dynamic page transitions. Reference for conversion-focused layout and confident copy.
+
+When building new sections or refining existing ones, fetch these sites for current patterns and adapt to Irvale's brand. Focus on: customer-first messaging, outcome-driven stats, elegant micro-interactions, and premium editorial feel.
+
+- Also search CodePen (https://codepen.io) for creative component examples — scroll animations, text reveals, parallax effects, and luxury micro-interactions.
 
 ## Dev Spec
 - The single source of truth for this build is `docs/dev-spec.md`
