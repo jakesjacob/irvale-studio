@@ -103,7 +103,7 @@ export default function HeroSection() {
           as="h1"
           className="font-display italic font-normal text-text-light text-[length:var(--type-display)] leading-[var(--type-display-lh)] max-w-[900px] mx-auto justify-center"
         >
-          Where premium brands meet their digital moment.
+          Premium software solutions.
         </RevealText>
 
         <p className="mt-6 font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-light/80 font-light max-w-lg mx-auto">
