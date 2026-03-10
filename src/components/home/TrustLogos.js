@@ -3,7 +3,6 @@
 import SectionReveal from '@/components/ui/SectionReveal';
 import Eyebrow from '@/components/ui/Eyebrow';
 
-// Placeholder logos — will be replaced with actual client logos
 const logos = [
   'Heathland GC',
   'Aura Wellness',
@@ -21,7 +20,7 @@ export default function TrustLogos() {
         style={{ maxWidth: 'var(--max-width)' }}
       >
         <SectionReveal className="text-center">
-          <Eyebrow className="mb-12 block">Trusted by Premium Brands</Eyebrow>
+          <Eyebrow className="mb-12 block">Brands That Grew With Us</Eyebrow>
           <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
             {logos.map((logo) => (
               <div

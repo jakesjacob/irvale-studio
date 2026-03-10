@@ -11,8 +11,8 @@ import Testimonial from '@/components/home/Testimonial';
 import CTASection from '@/components/home/CTASection';
 
 const marqueeItems = [
-  'GOLF CLUBS', 'LUXURY SPAS', 'BOUTIQUE GYMS', 'PRIVATE HOTELS',
-  'FINE DINING', 'AI VISIBILITY', 'MEMBERS CLUBS',
+  '+340% ENQUIRIES', '+180% DIRECT BOOKINGS', 'SOLD OUT IN 72HRS',
+  '+210% CLASS BOOKINGS', '400+ WAITLIST', '#1 LOCAL RANKINGS',
 ];
 
 export default function Home() {

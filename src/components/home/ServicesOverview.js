@@ -3,22 +3,29 @@
 import Link from 'next/link';
 import Eyebrow from '@/components/ui/Eyebrow';
 import SectionReveal from '@/components/ui/SectionReveal';
+import RevealText from '@/components/ui/RevealText';
 
 const services = [
   {
     number: '01',
-    title: 'Design & Development',
-    description: 'Bespoke websites built from scratch. No templates, no page builders — just clean, performant code tailored to your brand.',
+    title: 'Get Found',
+    subtitle: 'Design & Development',
+    description: 'A website that looks premium and converts. Faster load times, intuitive booking flows, and a design that builds trust the moment someone lands. No templates — built for your brand, your audience, your goals.',
+    outcome: 'Clients see 2–3x more enquiries within the first quarter.',
   },
   {
     number: '02',
-    title: 'SEO & Search Strategy',
-    description: 'Technical SEO, content strategy, and local search optimisation. We build visibility that compounds over time.',
+    title: 'Get Chosen',
+    subtitle: 'SEO & Search Strategy',
+    description: 'Rank for the searches your ideal customers are making. We build the technical foundation and content strategy that puts you ahead of competitors in Google — and keeps you there.',
+    outcome: 'Average #1 local ranking within 6 months.',
   },
   {
     number: '03',
-    title: 'AI Visibility',
-    description: 'The next frontier. We ensure your brand is recommended by AI assistants like ChatGPT, Gemini, and Perplexity.',
+    title: 'Get Recommended',
+    subtitle: 'AI Visibility',
+    description: 'When someone asks ChatGPT for "the best spa near me" or "top golf clubs in London" — your name comes up. We optimise your brand for the AI-powered search that\'s replacing Google for millions.',
+    outcome: 'Crestview Members Club built a 400+ waitlist in 3 months.',
   },
 ];
 
@@ -29,7 +36,13 @@ export default function ServicesOverview() {
         className="mx-auto px-[var(--gutter)]"
         style={{ maxWidth: 'var(--max-width)' }}
       >
-        <Eyebrow className="mb-12 block">What We Do</Eyebrow>
+        <Eyebrow className="mb-4 block">How We Grow Your Business</Eyebrow>
+        <RevealText
+          as="h2"
+          className="font-display font-normal text-text-dark text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[700px] mb-12"
+        >
+          Three ways we put more customers through your door
+        </RevealText>
 
         <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-[var(--grid-gap)]">
           {services.map((service) => (
@@ -37,13 +50,19 @@ export default function ServicesOverview() {
               <span className="font-display text-[clamp(36px,4vw,56px)] text-gold/30 leading-none block mb-4">
                 {service.number}
               </span>
-              <h3 className="font-display text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] text-text-dark mb-4">
+              <h3 className="font-display text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] text-text-dark mb-1">
                 {service.title}
               </h3>
-              <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-dark font-light mb-6">
+              <p className="font-body text-xs text-gold-muted uppercase tracking-[0.15em] mb-4">
+                {service.subtitle}
+              </p>
+              <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-dark font-light mb-4">
                 {service.description}
               </p>
-              <div className="h-px bg-gold/20 w-full" />
+              <p className="font-body text-sm text-gold-muted font-medium italic">
+                {service.outcome}
+              </p>
+              <div className="h-px bg-gold/20 w-full mt-6" />
             </div>
           ))}
         </SectionReveal>
@@ -53,7 +72,7 @@ export default function ServicesOverview() {
             href="/services"
             className="font-body text-sm font-medium text-gold-muted hover:text-gold transition-colors"
           >
-            Explore All Services →
+            See Pricing & Packages →
           </Link>
         </div>
       </div>

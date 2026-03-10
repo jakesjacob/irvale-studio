@@ -6,6 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Link from 'next/link';
 import Eyebrow from '@/components/ui/Eyebrow';
+import RevealText from '@/components/ui/RevealText';
 import { projects } from '@/lib/data/projects';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +20,6 @@ export default function FeaturedWork() {
   useGSAP(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Only enable horizontal scroll on desktop
     const mm = gsap.matchMedia();
 
     mm.add('(min-width: 768px)', () => {
@@ -46,12 +46,18 @@ export default function FeaturedWork() {
   return (
     <section ref={sectionRef} className="bg-dark overflow-hidden">
       <div className="py-[var(--section-gap)]">
-        {/* Header */}
+        {/* Header — results-focused */}
         <div
           className="mx-auto px-[var(--gutter)] mb-12"
           style={{ maxWidth: 'var(--max-width)' }}
         >
-          <Eyebrow className="block">Selected Work</Eyebrow>
+          <Eyebrow className="mb-4 block">Client Results</Eyebrow>
+          <RevealText
+            as="h2"
+            className="font-display font-normal text-text-light text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] max-w-[600px]"
+          >
+            Real businesses. Measurable growth. Here&rsquo;s the proof.
+          </RevealText>
         </div>
 
         {/* Horizontal scroll track (desktop) / vertical grid (mobile) */}
@@ -63,29 +69,36 @@ export default function FeaturedWork() {
             <Link
               key={project.slug}
               href={`/work/${project.slug}`}
-             
               className="group relative flex-shrink-0 w-full md:w-[45vw] aspect-[4/3] bg-dark-2 overflow-hidden mb-4 md:mb-0"
             >
-              {/* Placeholder — will be replaced with actual images */}
               <div className="absolute inset-0 bg-gradient-to-br from-dark-2 to-dark" />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-dark/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+              {/* Always-visible result metric */}
+              <div className="absolute top-6 left-6 z-10">
+                <span className="font-display text-[clamp(20px,2.5vw,32px)] text-gold leading-none">
+                  {project.metric}
+                </span>
+              </div>
+
+              {/* Hover overlay with details */}
+              <div className="absolute inset-0 bg-dark/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                 <span className="font-body text-xs text-gold uppercase tracking-[0.15em] mb-2">
                   {project.niche}
                 </span>
                 <h3 className="font-display text-[length:var(--type-h3)] leading-[var(--type-h3-lh)] text-text-light">
                   {project.name}
                 </h3>
-                <span className="font-body text-sm text-text-muted-light mt-2">
-                  View Case Study →
+                <p className="font-body text-sm text-text-muted-light mt-2 max-w-sm">
+                  {project.headline}
+                </p>
+                <span className="font-body text-sm text-gold mt-3">
+                  Read Case Study →
                 </span>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* CTA after scroll */}
         <div
           className="mx-auto px-[var(--gutter)] mt-12"
           style={{ maxWidth: 'var(--max-width)' }}
@@ -94,7 +107,7 @@ export default function FeaturedWork() {
             href="/work"
             className="font-body text-sm font-medium text-gold hover:text-gold-light transition-colors"
           >
-            See All Work →
+            See All Client Results →
           </Link>
         </div>
       </div>

@@ -6,9 +6,9 @@ import Eyebrow from '@/components/ui/Eyebrow';
 import Counter from '@/components/ui/Counter';
 
 const stats = [
-  { value: 12, suffix: '', label: 'Projects / Year' },
-  { value: 100, suffix: '%', label: 'Bespoke' },
-  { value: 3, suffix: '', label: 'Disciplines' },
+  { value: 340, suffix: '%', label: 'Average increase in enquiries' },
+  { value: 180, suffix: '%', label: 'More direct bookings' },
+  { value: 72, suffix: 'hrs', label: 'Fastest sell-out after launch' },
 ];
 
 export default function IntroStatement() {
@@ -18,34 +18,30 @@ export default function IntroStatement() {
         className="mx-auto px-[var(--gutter)]"
         style={{ maxWidth: 'var(--max-width)' }}
       >
-        <Eyebrow className="mb-8 block">Who We Are</Eyebrow>
+        <Eyebrow className="mb-8 block">The Problem</Eyebrow>
 
         <RevealText
           as="h2"
           className="font-display font-normal text-text-light text-[length:var(--type-h2)] leading-[var(--type-h2-lh)] max-w-[800px] mb-12"
         >
-          A studio built for brands that refuse to blend in
+          Your brand deserves better than a template website that loses you money
         </RevealText>
 
         <SectionReveal className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <p className="font-body text-[length:var(--type-body-lg)] leading-[var(--type-body-lg-lh)] text-text-muted-light font-light">
-            We design and build digital experiences for luxury and premium brands
-            in hospitality, wellness, and private membership. Every project is
-            treated as a one-of-one.
+            Premium brands lose thousands every month to poorly built websites — high bounce rates, low conversions, and invisible search presence. Your competitors are taking the bookings that should be yours.
           </p>
           <p className="font-body text-[length:var(--type-body)] leading-[var(--type-body-lh)] text-text-muted-light font-light">
-            From strategy to launch, we handle everything in-house — design,
-            development, SEO, and AI visibility. No templates. No shortcuts. Just
-            considered work that performs.
+            We fix that. Bespoke design, technical SEO, and AI visibility — built specifically for hospitality, wellness, and private membership brands. The result? More people find you, more people trust you, and more people book.
           </p>
         </SectionReveal>
 
-        {/* Stats */}
+        {/* Client result stats */}
         <SectionReveal className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-[var(--border-dark)]">
           {stats.map((stat, i) => (
             <div key={i} className="relative pl-6 border-l border-gold/30">
-              <div className="font-display text-[clamp(36px,5vw,64px)] text-text-light leading-none mb-2">
-                <Counter target={stat.value} suffix={stat.suffix} />
+              <div className="font-display text-[clamp(36px,5vw,64px)] text-gold leading-none mb-2">
+                +<Counter target={stat.value} suffix={stat.suffix} />
               </div>
               <p className="font-body text-xs text-text-muted-light uppercase tracking-[0.15em]">
                 {stat.label}
