@@ -51,9 +51,9 @@ export default function HeroSection() {
       },
     });
 
-    // Overlay darkens as you scroll
+    // Overlay darkens progressively as you scroll
     gsap.to(overlayRef.current, {
-      opacity: 0.85,
+      opacity: 1,
       ease: 'none',
       scrollTrigger: {
         trigger: sectionRef.current,
