@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -52,7 +52,6 @@ const services = [
   },
 ];
 
-const AUTO_CYCLE_DURATION = 5000;
 
 /* ─── Desktop card (unchanged from before) ─── */
 function ServiceCard({ service, cardRef, numberRef, iconRef, accentRef }) {
@@ -142,8 +141,7 @@ function ServiceCard({ service, cardRef, numberRef, iconRef, accentRef }) {
 }
 
 /* ─── Mobile accordion item ─── */
-function AccordionItem({ service, isOpen, onClick, progress }) {
-  const contentRef = useRef(null);
+function AccordionItem({ service, isOpen, onClick }) {
 
   return (
     <div
@@ -170,7 +168,6 @@ function AccordionItem({ service, isOpen, onClick, progress }) {
 
       {/* Expandable content */}
       <div
-        ref={contentRef}
         className="overflow-hidden transition-all duration-500 ease-out"
         style={{ maxHeight: isOpen ? '200px' : '0px', opacity: isOpen ? 1 : 0 }}
       >
@@ -184,15 +181,6 @@ function AccordionItem({ service, isOpen, onClick, progress }) {
         </div>
       </div>
 
-      {/* Progress bar for active item */}
-      {isOpen && (
-        <div className="h-[2px] bg-gold/10">
-          <div
-            className="h-full bg-gold/50 transition-none"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      )}
     </div>
   );
 }
@@ -207,53 +195,10 @@ export default function ServicesOverview() {
 
   // Mobile accordion state
   const [activeIndex, setActiveIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef(null);
-  const pauseTimerRef = useRef(null);
-  const startTimeRef = useRef(Date.now());
-
-  // Detect mobile
-  useEffect(() => {
-    const mql = window.matchMedia('(max-width: 767px)');
-    setIsMobile(mql.matches);
-    const handler = (e) => setIsMobile(e.matches);
-    mql.addEventListener('change', handler);
-    return () => mql.removeEventListener('change', handler);
-  }, []);
-
-  // Auto-cycle accordion on mobile (respects pause)
-  useEffect(() => {
-    if (!isMobile || paused) return;
-
-    startTimeRef.current = Date.now();
-    setProgress(0);
-
-    const progressInterval = setInterval(() => {
-      const elapsed = Date.now() - startTimeRef.current;
-      const pct = Math.min((elapsed / AUTO_CYCLE_DURATION) * 100, 100);
-      setProgress(pct);
-    }, 50);
-
-    timerRef.current = setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % services.length);
-    }, AUTO_CYCLE_DURATION);
-
-    return () => {
-      clearInterval(progressInterval);
-      clearTimeout(timerRef.current);
-    };
-  }, [activeIndex, isMobile, paused]);
 
   const handleAccordionClick = useCallback((i) => {
-    clearTimeout(timerRef.current);
-    clearTimeout(pauseTimerRef.current);
-    setActiveIndex(i);
-    setPaused(true);
-    // Resume auto-cycle after 10 seconds of no interaction
-    pauseTimerRef.current = setTimeout(() => setPaused(false), 10000);
-  }, []);
+    setActiveIndex(activeIndex === i ? -1 : i);
+  }, [activeIndex]);
 
   // Desktop GSAP animations
   useGSAP(
@@ -363,7 +308,6 @@ export default function ServicesOverview() {
               service={service}
               isOpen={activeIndex === i}
               onClick={() => handleAccordionClick(i)}
-              progress={activeIndex === i ? progress : 0}
             />
           ))}
         </div>

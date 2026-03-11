@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -42,7 +42,6 @@ const credentials = [
   },
 ];
 
-const AUTO_CYCLE_DURATION = 4000;
 
 /* ─── Desktop card (unchanged hover behavior) ─── */
 function CredentialCard({ credential }) {
@@ -150,36 +149,10 @@ export default function Accredited() {
 
   // Mobile accordion state
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const timerRef = useRef(null);
-  const pauseTimerRef = useRef(null);
-
-  useEffect(() => {
-    const mql = window.matchMedia('(max-width: 767px)');
-    setIsMobile(mql.matches);
-    const handler = (e) => setIsMobile(e.matches);
-    mql.addEventListener('change', handler);
-    return () => mql.removeEventListener('change', handler);
-  }, []);
-
-  useEffect(() => {
-    if (!isMobile || paused) return;
-
-    timerRef.current = setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % credentials.length);
-    }, AUTO_CYCLE_DURATION);
-
-    return () => clearTimeout(timerRef.current);
-  }, [activeIndex, isMobile, paused]);
 
   const handleAccordionClick = useCallback((i) => {
-    clearTimeout(timerRef.current);
-    clearTimeout(pauseTimerRef.current);
-    setActiveIndex(i);
-    setPaused(true);
-    pauseTimerRef.current = setTimeout(() => setPaused(false), 10000);
-  }, []);
+    setActiveIndex(activeIndex === i ? -1 : i);
+  }, [activeIndex]);
 
   // Desktop animations
   useGSAP(
